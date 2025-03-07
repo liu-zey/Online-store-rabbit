@@ -90,9 +90,11 @@ public class ProductServiceImpl implements ProductService {
                     if (entry.getValue().getName() == request.getName()) {
                         List<Product> p = new ArrayList<>();
                         p.add(entry.getValue());
-                        response.setRecords(p);response.setTotal(producteCache.size());response.setPageNum(request.getPageNum());response.setPageSize(request.getPageSize());
-                        // return response;
-                    }
+                        response.setRecords(p);
+                        response.setTotal(productCache.size());
+                        response.setPageNum(request.getPageNum());
+                        response.setPageSize(request.getPageSize());
+                        return response;
                 }
             }
 
