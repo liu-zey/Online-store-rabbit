@@ -11,7 +11,18 @@ public class ProductPageRequest {
     @Max(value = 100, message = "error.page.size.max")
     private int pageSize = 10;
 
+    @Size(max = 100, message = "error.product.name.max")
     private String name;
+
+    // 构造函数
+    public ProductPageRequest() {
+    }
+    
+    public ProductPageRequest(int pageNum, int pageSize, String name) {
+        this.pageNum = pageNum;
+        this.pageSize = pageSize;
+        this.name = name;
+    }
 
     public int getPageNum() {
         return pageNum;
@@ -36,4 +47,14 @@ public class ProductPageRequest {
     public void setName(String name) {
         this.name = name;
     }
+    
+    @Override
+    public String toString() {
+        return "ProductPageRequest{" +
+               "pageNum=" + pageNum +
+               ", pageSize=" + pageSize +
+               ", name='" + name + '\'' +
+               '}';
+    }
+}
 } 
